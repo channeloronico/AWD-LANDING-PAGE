@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: lightpink;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: white;
+    font-size: 1rem;
+    color: lightpinksmoke;
+    font-family: Times New Roman;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 5px 5px 0 rgb(36, 36, 36);
+    z-index: 1;
+    transition: 0.5s;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.button:active {
+    transform: translate(5%, 5%);
+    box-shadow: 0px 0px 0 black;
+}
+
+.notification {
+    width: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    position: relative;
+}
+
+.notification .bell {
+    transition: color 0.3s;
+}
+
+.notification .counter {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: lightpink;
+    color: black;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.notification.clicked .bell {
+    color: white; 
+}
+
+.notification.clicked .counter {
+    background-color: black; 
+
+@keyframes bell {
+    0% {
+        transform: rotate(40deg);
+    }
+    12.5% {
+        transform: rotate(-35deg);
+    }
+    25% {
+        transform: rotate(30deg);
+    }
+    37.5% {
+        transform: rotate(-25deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
+    62.5% {
+        transform: rotate(-15deg);
+    }
+    75% {
+        transform: rotate(10deg);
+    }
+    87.5% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.notify:before {
+    animation: bell 1s ease-in-out;
+}
+}
